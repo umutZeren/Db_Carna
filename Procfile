@@ -1,1 +1,1 @@
-web: gunicorn lebaleb.wsgi
+web: gunicorn rest-api-db.wsgi
