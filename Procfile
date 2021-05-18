@@ -1,1 +1,1 @@
-web: gunicorn postgres_api.wsgi
+web: gunicorn lebaleb.wsgi
