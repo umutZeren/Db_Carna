@@ -1,1 +1,1 @@
-web: gunicorn --pythonpath postgres_api postgres_api.wsgi --log-file -
+web: gunicorn   ./django/postgres_api.wsgi
