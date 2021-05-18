@@ -1,1 +1,1 @@
-web: gunicorn   django.wsgi
+web: gunicorn   django/postgres_api.wsgi
