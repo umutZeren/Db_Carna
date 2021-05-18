@@ -1,7 +1,6 @@
 from rest_framework import viewsets
 from . import serializer
 from . import models
-from rest_framework.response import Response
 from rest_framework.decorators import action
 from django.http import HttpResponse
 from django.core import serializers
