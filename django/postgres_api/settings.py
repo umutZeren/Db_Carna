@@ -1,5 +1,7 @@
 import django_heroku
-
+import os
+if os.path.exists('env.py'):
+        import env
 """
 Django settings for postgres_api project.
 
