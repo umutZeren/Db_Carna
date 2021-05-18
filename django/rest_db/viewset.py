@@ -21,5 +21,10 @@ class UsersViewSet(viewsets.ModelViewSet):
         data = serializers.serialize('json', top_10)
         return HttpResponse(data, content_type='application/json')
 
-
+    @action(methods=['get'], detail=False)
+    def top_ten_grade_user(self, request, *args):
+        print(args)
+        top_10 = self.get_queryset().order_by('age').filter(user_id__gt=request.query_params['number'])
+        data = serializers.serialize('json', top_10)
+        return HttpResponse(data, content_type='application/json')
 
