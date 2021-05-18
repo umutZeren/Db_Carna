@@ -1,2 +1,2 @@
-web: gunicorn postgres_api/wsgi.py
+web: gunicorn django.postgres_api.wsgi --log-file
 
