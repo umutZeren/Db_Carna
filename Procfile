@@ -1,3 +1,3 @@
 cd django/posgtres_api
-web: gunicorn postgre_api.wsgi --log-file -
+web: gunicorn postgres_api.wsgi --log-file -
 
