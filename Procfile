@@ -1,1 +1,2 @@
-web: gunicorn   ./django/postgres_api.wsgi
+web: gunicorn --pythonpath django/postgres_api  postgres_api.wsgi
+
