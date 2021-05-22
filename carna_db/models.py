@@ -18,6 +18,19 @@ class Users(models.Model):
 
     class Meta:
         db_table = 'Users'
-from django.db import models
+
+class Courses(models.Model):
+    coursename=models.CharField(max_length=30)
+    subject =models.CharField(max_length=30) #it technical words work for engineering ,statistics,math .. etc
+    publisher=models.CharField(max_length=30) # indivuduals can submit courses to admin then admin can publish udemy model
+    subject_diffuculty=models.CharField(max_length=30)
+    class Meta:
+        db_table = 'Courses'
+
+class Match_Example(models.Model):
+    word=models.CharField(max_length=30)
+    answer =models.CharField(max_length=30) #it arts  .. etc
+    class Meta:
+        db_table = 'Match_Example'
 
 # Create your models here.
