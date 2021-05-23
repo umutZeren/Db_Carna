@@ -11,7 +11,7 @@ class UsersViewSet(viewsets.ModelViewSet):
     serializer_class = Serializer.UserSerializer
 class CoursesViewSet(viewsets.ModelViewSet):
     queryset = models.Courses.objects.all()
-    serializer_class = Serializer.UserSerializer
+    serializer_class = Serializer.CourseSerializer
 
     #at request body parameter number means the slice of the results if any given
     #coressponds to select * from x order by x.user_id asc limit params[number];
