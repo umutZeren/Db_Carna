@@ -17,12 +17,17 @@ from django.contrib import admin
 from django.urls import path, include
 from .router import router
 from carna_db.views import top_10_grades_view
+from rest_framework.authtoken import views
+from django.contrib.auth.views import LoginView
+
 
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('rest-api/', include(router.urls)),
-    path('top_Ten_users/', top_10_grades_view)
+    path('top_Ten_users/', top_10_grades_view),
+    path('api-token-auth/', views.obtain_auth_token, name='api-token-auth'),
+    path('login/', LoginView.as_view(), name='login')
 
 ]

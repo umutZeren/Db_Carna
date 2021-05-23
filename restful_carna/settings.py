@@ -1,7 +1,7 @@
 import django_heroku
 import os
-if os.path.exists('env.py'):
-        import env
+
+import rest_framework 
 """
 Django settings for postgres_api project.
 
@@ -28,7 +28,7 @@ SECRET_KEY = '&k08l&+sq8!0em!$!9(r-r66v^vj48abjglvjmi=j6+ikqeson'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'FALSE'
 
-ALLOWED_HOSTS = ['db-users.herokuapp.com','http://127.0.0.1:8000']
+ALLOWED_HOSTS = ['db-users.herokuapp.com','http://127.0.0.1:8000/']
 
 
 # Application definition
@@ -38,16 +38,20 @@ INSTALLED_APPS = [
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-    'django.contrib.messages',
+    'django.contrib.messages',    
+    'oauth2_provider', # OAuth2
     'django.contrib.staticfiles',
     'carna_db',
     'rest_framework',
-    'corsheaders'
+    'corsheaders',
+    'rest_framework.authtoken' 
 ]
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware', 
+    'oauth2_provider.middleware.OAuth2TokenMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -61,7 +65,7 @@ ROOT_URLCONF = 'restful_carna.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'restful_carna')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -75,6 +79,21 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'restful_carna.wsgi.application'
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+}
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend' ,
+    'oauth2_provider.backends.OAuth2Backend',
+)
 
 
 # Database
