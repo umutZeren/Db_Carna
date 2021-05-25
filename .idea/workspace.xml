@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="512e6288-37a5-4a11-987d-73efef717285" name="Default Changelist" comment="" />
+    <list default="true" id="512e6288-37a5-4a11-987d-73efef717285" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/carna_db/Serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/carna_db/Serializer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/carna_db/viewset.py" beforeDir="false" afterPath="$PROJECT_DIR$/carna_db/viewset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/restful_carna/router.py" beforeDir="false" afterPath="$PROJECT_DIR$/restful_carna/router.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

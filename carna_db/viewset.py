@@ -12,6 +12,9 @@ class UsersViewSet(viewsets.ModelViewSet):
 class CoursesViewSet(viewsets.ModelViewSet):
     queryset = models.Courses.objects.all()
     serializer_class = Serializer.CourseSerializer
+class Match_ExampleViewSet(viewsets.ModelViewSet):
+    queryset = models.Match_Example.objects.all()
+    serializer_class = Serializer.MatchWordsSerializer
 
     #at request body parameter number means the slice of the results if any given
     #coressponds to select * from x order by x.user_id asc limit params[number];
